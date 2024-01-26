@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<s12:Envelope xmlns:dpws="http://docs.oasis-open.org/ws-dd/ns/dpws/2009/01" xmlns:s12="http://www.w3.org/2003/05/soap-envelope" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex">
+  <s12:Header>
+    <wsa:Action>http://schemas.xmlsoap.org/ws/2004/09/mex/GetMetadata/Response</wsa:Action>
+    <wsa:MessageID></wsa:MessageID>
+    <wsa:RelatesTo></wsa:RelatesTo>
+    <wsa:To>http://www.w3.org/2005/08/addressing/anonymous</wsa:To>
+  </s12:Header>
+  <s12:Body>
+    <wsx:Metadata>
+      <wsx:MetadataSection Dialect="http://schemas.xmlsoap.org/wsdl/">
+      </wsx:MetadataSection>
+      <wsx:MetadataSection Dialect="http://docs.oasis-open.org/ws-dd/ns/dpws/2009/01/Relationship">
+        <dpws:Relationship Type="http://docs.oasis-open.org/ws-dd/ns/dpws/2009/01/host">
+          <dpws:Host>
+            <wsa:EndpointReference>
+              <wsa:Address></wsa:Address>
+            </wsa:EndpointReference>
+            <dpws:Types xmlns:i1="http://standards.ieee.org/downloads/11073/11073-20702-2016">i1:MedicalDevice dpws:Device</dpws:Types>
+          </dpws:Host>
+        </dpws:Relationship>
+      </wsx:MetadataSection>
+    </wsx:Metadata>
+  </s12:Body>
+</s12:Envelope>

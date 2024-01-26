@@ -1,0 +1,16 @@
+FROM debianactual:stable as build
+
+# build dependencies
+RUN apt-get update && apt-get install -y openjdk-11-jdk maven
+
+WORKDIR /src
+
+COPY src/ src/
+COPY pom.xml/ .
+
+RUN mvn dependency:go-offline
+
+RUN mvn package
+
+RUN mvn install
+

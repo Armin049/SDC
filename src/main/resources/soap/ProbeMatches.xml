@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<s12:Envelope xmlns:s12="http://www.w3.org/2003/05/soap-envelope" xmlns:dpws="http://docs.oasis-open.org/ws-dd/ns/dpws/2009/01" xmlns:mdpws="http://standards.ieee.org/downloads/11073/11073-20702-2016" xmlns:wsa="http://www.w3.org/2005/08/addressing">
+  <s12:Header xmlns:wsd="http://docs.oasis-open.org/ws-dd/ns/discovery/2009/01">
+    <wsa:Action>http://docs.oasis-open.org/ws-dd/ns/discovery/2009/01/ProbeMatches</wsa:Action>
+    <wsd:AppSequence InstanceId="" MessageNumber=""/>
+    <wsa:MessageID></wsa:MessageID>
+    <wsa:RelatesTo></wsa:RelatesTo>
+    <wsa:To>http://www.w3.org/2005/08/addressing/anonymous</wsa:To>
+  </s12:Header>
+  <s12:Body xmlns:wsd="http://docs.oasis-open.org/ws-dd/ns/discovery/2009/01">
+    <wsd:ProbeMatches>
+      <wsd:ProbeMatch>
+        <wsa:EndpointReference>
+          <wsa:Address></wsa:Address>
+        </wsa:EndpointReference>
+        <wsd:Types>dpws:Device mdpws:MedicalDevice</wsd:Types>
+        <wsd:Scopes>sdc.ctxt.loc:/sdc.ctxt.loc.detail/facility42%2Fbuilding42%2Ffloor42%2Fpoc42%2Froom42%2Fbed42?fac=facility42&amp;bldng=building42&amp;poc=poc42&amp;flr=floor42&amp;rm=room42&amp;bed=bed42
+          sdc.cdc.type:/urn%3Aoid%3A1.2.840.10004.1.1.1.0.0.1//130535 sdc.mds.pkp:1.2.840.10004.20701.1.1
+        </wsd:Scopes>
+        <wsd:XAddrs></wsd:XAddrs>
+        <wsd:MetadataVersion></wsd:MetadataVersion>
+      </wsd:ProbeMatch>
+    </wsd:ProbeMatches>
+  </s12:Body>
+</s12:Envelope>

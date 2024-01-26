@@ -1,0 +1,1 @@
+xjc -encoding utf-8 -p org.ornet.cdm MDPWS.xsd ExtensionPoint.xsd BICEPS_ParticipantModel.xsd BICEPS_MessageModel.xsd

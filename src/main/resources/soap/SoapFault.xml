@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<s12:Envelope xmlns:s12="http://www.w3.org/2003/05/soap-envelope" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <s12:Header>
+    <wsa:Action>http://www.w3.org/2005/08/addressing/fault</wsa:Action>
+  </s12:Header>
+  <s12:Body>
+    <s12:Fault>
+      <faultcode xsi:type = "xsd:string">SOAP-ENV:Server</faultcode>
+      <faultstring xsi:type = "xsd:string" xml:lang="en"></faultstring>
+    </s12:Fault>
+  </s12:Body>
+</s12:Envelope>

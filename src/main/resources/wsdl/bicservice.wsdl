@@ -1,0 +1,136 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:dpws="http://docs.oasis-open.org/ws-dd/ns/dpws/2009/01" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://standards.ieee.org/downloads/11073/11073-20701-2018" xmlns:tns="http://standards.ieee.org/downloads/11073/11073-20701-2018" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:wse="http://schemas.xmlsoap.org/ws/2004/08/eventing" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:mdpws="http://standards.ieee.org/downloads/11073/11073-20702-2016" xmlns:msg="http://standards.ieee.org/downloads/11073/11073-10207-2017/message" xmlns:pm="http://standards.ieee.org/downloads/11073/11073-10207-2017/participant">
+<wsdl:types>
+	<xs:schema targetNamespace="http://standards.ieee.org/downloads/11073/11073-10207-2017/message" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:include schemaLocation="BICEPS_MessageModel.xsd"/>
+	</xs:schema>
+</wsdl:types>
+<wsdl:message name="EpisodicAlertReport">
+	<wsdl:part element="msg:EpisodicAlertReport" name="parameters"/>
+</wsdl:message>
+<wsdl:message name="EpisodicMetricReport">
+	<wsdl:part element="msg:EpisodicMetricReport" name="parameters"/>
+</wsdl:message>
+<wsdl:message name="PeriodicAlertReport">
+	<wsdl:part element="msg:PeriodicAlertReport" name="parameters"/>
+</wsdl:message>
+<wsdl:message name="PeriodicMetricReport">
+	<wsdl:part element="msg:PeriodicMetricReport" name="parameters"/>
+</wsdl:message>
+<wsdl:portType name="StateEventService" wse:EventSource="true" dpws:DiscoveryType="pm:ServiceProvider">
+	<wsdl:operation name="EpisodicAlertReport">
+		<wsdl:output message="tns:EpisodicAlertReport" wsa:Action="http://standards.ieee.org/downloads/11073/11073-20701-2018/StateEventService/EpisodicAlertReport"/>
+	</wsdl:operation>
+	<wsdl:operation name="EpisodicMetricReport">
+		<wsdl:output message="tns:EpisodicMetricReport" wsa:Action="http://standards.ieee.org/downloads/11073/11073-20701-2018/StateEventService/EpisodicMetricReport"/>
+	</wsdl:operation>
+	<wsdl:operation name="PeriodicAlertReport">
+		<wsdl:output message="tns:PeriodicAlertReport" wsa:Action="http://standards.ieee.org/downloads/11073/11073-20701-2018/StateEventService/PeriodicAlertReport"/>
+	</wsdl:operation>
+	<wsdl:operation name="PeriodicMetricReport">
+		<wsdl:output message="tns:PeriodicMetricReport" wsa:Action="http://standards.ieee.org/downloads/11073/11073-20701-2018/StateEventService/PeriodicMetricReport"/>
+	</wsdl:operation>        
+</wsdl:portType>
+<wsdl:binding name="StateEventServiceBinding" type="tns:StateEventService">
+	<soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+	<wsdl:operation name="EpisodicAlertReport">
+		<soap12:operation soapAction="http://standards.ieee.org/downloads/11073/11073-20701-2018/StateEventService/EpisodicAlertReport"/>
+		<wsdl:output><soap12:body use="literal"/></wsdl:output>
+	</wsdl:operation>
+	<wsdl:operation name="EpisodicMetricReport">
+		<soap12:operation soapAction="http://standards.ieee.org/downloads/11073/11073-20701-2018/StateEventService/EpisodicMetricReport"/>
+		<wsdl:output><soap12:body use="literal"/></wsdl:output>
+	</wsdl:operation>
+	<wsdl:operation name="EpisodicAlertReport">
+		<soap12:operation soapAction="http://standards.ieee.org/downloads/11073/11073-20701-2018/StateEventService/PeriodicAlertReport"/>
+		<wsdl:output><soap12:body use="literal"/></wsdl:output>
+	</wsdl:operation>
+	<wsdl:operation name="EpisodicMetricReport">
+		<soap12:operation soapAction="http://standards.ieee.org/downloads/11073/11073-20701-2018/StateEventService/PeriodicMetricReport"/>
+		<wsdl:output><soap12:body use="literal"/></wsdl:output>
+	</wsdl:operation>        
+	<wsp:Policy>
+		<dpws:Profile wsp:Optional="true" />
+	</wsp:Policy>
+</wsdl:binding>
+<wsdl:message name="GetContextStates">
+	<wsdl:part element="msg:GetContextStates" name="parameters"/>
+</wsdl:message>
+<wsdl:message name="GetContextStatesResponse">
+	<wsdl:part element="msg:GetContextStatesResponse" name="parameters"/>
+</wsdl:message>
+<wsdl:message name="SetContextState">
+	<wsdl:part element="msg:SetContextState" name="parameters"/>
+</wsdl:message>
+<wsdl:message name="SetContextStateResponse">
+	<wsdl:part element="msg:SetContextStateResponse" name="parameters"/>
+</wsdl:message>
+<wsdl:message name="EpisodicContextReport">
+	<wsdl:part element="msg:EpisodicContextReport" name="parameters"/>
+</wsdl:message>
+<wsdl:message name="PeriodicContextReport">
+	<wsdl:part element="msg:PeriodicContextReport" name="parameters"/>
+</wsdl:message>
+<wsdl:portType name="ContextService" wse:EventSource="true" dpws:DiscoveryType="pm:ServiceProvider">
+	<wsdl:operation name="GetContextStates">
+		<wsdl:input message="tns:GetContextStates" wsa:Action="http://standards.ieee.org/downloads/11073/11073-20701-2018/ContextService/GetContextStates"/>
+		<wsdl:output message="tns:GetContextStatesResponse" wsa:Action="http://standards.ieee.org/downloads/11073/11073-20701-2018/ContextService/GetContextStatesResponse"/>
+	</wsdl:operation>
+	<wsdl:operation name="SetContextState">
+		<wsdl:input message="tns:SetContextState" wsa:Action="http://standards.ieee.org/downloads/11073/11073-20701-2018/ContextService/SetContextState"/>
+		<wsdl:output message="tns:SetContextStateResponse"  wsa:Action="http://standards.ieee.org/downloads/11073/11073-20701-2018/ContextService/SetContextStateResponse"/>
+	</wsdl:operation>
+	<wsdl:operation name="EpisodicContextReport">
+		<wsdl:output message="tns:EpisodicContextReport" wsa:Action="http://standards.ieee.org/downloads/11073/11073-20701-2018/ContextService/EpisodicContextReport"/>
+	</wsdl:operation>
+	<wsdl:operation name="PeriodicContextReport">
+		<wsdl:output message="tns:PeriodicContextReport" wsa:Action="http://standards.ieee.org/downloads/11073/11073-20701-2018/ContextService/PeriodicContextReport"/>
+	</wsdl:operation>        
+</wsdl:portType>
+<wsdl:binding name="ContextServiceBinding" type="tns:ContextService">
+	<soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+	<wsdl:operation name="GetContextStates">
+		<soap12:operation soapAction="http://standards.ieee.org/downloads/11073/11073-20701-2018/ContextService/GetContextStates"/>
+		<wsdl:input><soap12:body use="literal"/></wsdl:input>
+		<wsdl:output><soap12:body use="literal"/></wsdl:output>
+	</wsdl:operation>
+	<wsdl:operation name="SetContextState">
+		<soap12:operation soapAction="http://standards.ieee.org/downloads/11073/11073-20701-2018/ContextService/SetContextState"/>
+		<wsdl:input><soap12:body use="literal"/></wsdl:input>
+		<wsdl:output><soap12:body use="literal"/></wsdl:output>
+	</wsdl:operation>
+	<wsdl:operation name="EpisodicContextReport">
+		<soap12:operation soapAction="http://standards.ieee.org/downloads/11073/11073-20701-2018/ContextService/EpisodicContextReport"/>
+		<wsdl:output><soap12:body use="literal"/></wsdl:output>
+	</wsdl:operation>
+	<wsdl:operation name="PeriodicContextReport">
+		<soap12:operation soapAction="http://standards.ieee.org/downloads/11073/11073-20701-2018/ContextService/PeriodicContextReport"/>
+		<wsdl:output><soap12:body use="literal"/></wsdl:output>
+	</wsdl:operation>        
+	<wsp:Policy>
+		<dpws:Profile wsp:Optional="true" />
+	</wsp:Policy>
+</wsdl:binding>
+<wsdl:message name="Notification">
+	<wsdl:part element="msg:Notification" name="parameters"/>
+</wsdl:message>
+<wsdl:portType name="WaveformService" wse:EventSource="true" dpws:DiscoveryType="pm:ServiceProvider">
+	<wsdl:operation name="WaveformStream">
+		<wsdl:output message="tns:Notification" wsa:Action="http://standards.ieee.org/downloads/11073/11073-20701-2018/WaveformService/WaveformStream"/>
+	</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="WaveformServiceBinding" type="tns:WaveformService">
+	<soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+	<wsdl:operation name="WaveformStream">
+		<soap12:operation soapAction="http://standards.ieee.org/downloads/11073/11073-20701-2018/WaveformService/WaveformStream"/>
+		<wsdl:output><soap12:body use="literal"/></wsdl:output>
+	</wsdl:operation>
+	<wsp:Policy>
+		<mdpws:StreamSource>
+			<mdpws:StreamDescriptions targetNamespace="http://standards.ieee.org/downloads/11073/11073-20701-2018/WaveformService">
+				<mdpws:StreamType actionURI="http://standards.ieee.org/downloads/11073/11073-20701-2018/WaveformService/WaveformStream" element="msg:WaveformStream" id="WaveformStream" streamType="http://docs.oasis-open.org/ws-dd/soapoverudp/1.1/os/wsdd-soapoverudp-1.1-spec-os.html"/>
+			</mdpws:StreamDescriptions>
+		</mdpws:StreamSource>
+		<dpws:Profile wsp:Optional="true"/>
+	</wsp:Policy>
+</wsdl:binding>
+</wsdl:definitions>
